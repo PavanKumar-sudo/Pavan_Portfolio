@@ -31,65 +31,77 @@ const Hero = () => {
               <span className="text-sm font-medium text-accent">Available for new opportunities</span>
             </div>
 
-            {/* Main Heading */}
+            {/* Main Heading - Enhanced */}
             <div className="space-y-6">
               <div className="space-y-2">
-                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extralight tracking-tight text-foreground/90">
-                  Hey, <span className="italic font-serif text-accent">there</span>
+                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extralight tracking-tight text-foreground/90 animate-fade-in">
+                  Hey, <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-accent">there</span>
                 </h1>
               </div>
               
-              <div className="relative inline-block">
-                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-primary leading-[1.1]">
-                  I'M PAVAN
+              <div className="relative inline-block group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h2 className="relative text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1]">
+                  <span className="text-primary">I'M PAVAN</span>
                   <br />
-                  <span className="gradient-text">KUMAR</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-primary text-6xl sm:text-7xl lg:text-8xl">KUMAR</span>
                 </h2>
-                <div className="absolute -bottom-2 left-0 w-32 h-2 bg-accent rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-40 h-2.5 bg-gradient-to-r from-accent via-purple-400 to-accent rounded-full shadow-lg shadow-accent/50"></div>
               </div>
             </div>
 
-            {/* Description with glass card */}
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur-xl"></div>
-              <div className="relative bg-card/70 backdrop-blur-md border border-border/50 rounded-2xl p-6 shadow-xl">
-                <p className="text-lg text-foreground/80 leading-relaxed">
-                  Full Stack Developer with <span className="font-bold text-accent">6+ years</span> of experience building{" "}
-                  <span className="font-semibold text-primary">scalable, secure, and cloud-native</span> applications across banking, healthcare, and automotive domains.
+            {/* Description with enhanced glass card */}
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-accent/30 via-primary/20 to-accent/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl border border-accent/30 rounded-3xl p-8 shadow-2xl hover:shadow-accent/20 transition-all duration-500">
+                <p className="text-xl leading-relaxed">
+                  <span className="text-foreground/70">Full Stack Developer with </span>
+                  <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-accent text-2xl">6+ years</span>
+                  <span className="text-foreground/70"> of experience building </span>
+                  <span className="font-bold text-foreground">scalable, secure, and cloud-native</span>
+                  <span className="text-foreground/70"> applications across </span>
+                  <span className="font-semibold text-primary">banking, healthcare, and automotive</span>
+                  <span className="text-foreground/70"> domains.</span>
                 </p>
               </div>
             </div>
 
-            {/* Tech Stack Pills */}
-            <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2">
-                <Code2 className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Java & Spring Boot</span>
+            {/* Tech Stack Pills - Enhanced */}
+            <div className="flex flex-wrap gap-4">
+              <div className="group flex items-center gap-3 bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300">
+                <div className="p-1.5 bg-primary/20 rounded-full">
+                  <Code2 className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-base font-semibold text-foreground">Java & Spring Boot</span>
               </div>
-              <div className="flex items-center gap-2 bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2">
-                <Zap className="h-4 w-4 text-accent" />
-                <span className="text-sm font-medium text-accent">React & TypeScript</span>
+              <div className="group flex items-center gap-3 bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-md border border-accent/30 rounded-full px-6 py-3 shadow-lg hover:shadow-accent/30 hover:scale-105 transition-all duration-300">
+                <div className="p-1.5 bg-accent/20 rounded-full">
+                  <Zap className="h-5 w-5 text-accent" />
+                </div>
+                <span className="text-base font-semibold bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">React & TypeScript</span>
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2">
-                <Cloud className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">AWS & Kubernetes</span>
+              <div className="group flex items-center gap-3 bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-md border border-primary/30 rounded-full px-6 py-3 shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300">
+                <div className="p-1.5 bg-primary/20 rounded-full">
+                  <Cloud className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-base font-semibold text-foreground">AWS & Kubernetes</span>
               </div>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Enhanced */}
             <div className="flex flex-wrap gap-4 pt-2">
               <Button
                 onClick={() => scrollToSection("projects")}
-                className="gradient-purple hover:opacity-90 text-white rounded-full px-8 py-6 text-base shadow-xl hover:shadow-2xl transition-all hover:scale-105 group"
+                className="relative bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-white rounded-full px-8 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-accent/40 transition-all duration-500 group border-0"
               >
                 View Projects
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
               <Button
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="relative bg-card/50 backdrop-blur-md border-2 border-accent/40 hover:bg-accent/10 hover:border-accent/60 text-foreground rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:shadow-accent/30 transition-all duration-300 group"
               >
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
                 Resume
               </Button>
             </div>
