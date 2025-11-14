@@ -82,11 +82,11 @@ const About = () => {
             </div>
 
             {/* Right Content */}
-            <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               {/* Specialized In Card */}
-              <div className="relative group">
+              <div className="relative group z-10">
                 <div className="absolute -inset-2 bg-gradient-to-r from-accent/30 via-primary/20 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl border border-accent/30 rounded-3xl p-8 shadow-2xl hover:shadow-accent/20 transition-all">
+                <div className="relative bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl border border-accent/30 rounded-3xl p-8 shadow-2xl hover:shadow-accent/20 transition-all z-10">
                   <h4 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
                     <Award className="h-6 w-6 text-accent" />
                     Specialized in:
@@ -98,25 +98,25 @@ const About = () => {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6 relative z-0">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-2xl transition-all">
-                    <div className="p-3 bg-accent/10 rounded-xl mb-3 inline-block">
-                      <Rocket className="h-6 w-6 text-accent" />
+                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-6 text-center hover:shadow-2xl transition-all">
+                    <div className="p-2.5 bg-accent/10 rounded-xl mb-3 inline-block">
+                      <Rocket className="h-5 w-5 text-accent" />
                     </div>
-                    <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-accent mb-2">6+</p>
-                    <p className="text-sm font-semibold text-muted-foreground">Years Experience</p>
+                    <p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-accent mb-1">6+</p>
+                    <p className="text-xs font-semibold text-muted-foreground">Years Experience</p>
                   </div>
                 </div>
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-2xl transition-all">
-                    <div className="p-3 bg-primary/10 rounded-xl mb-3 inline-block">
-                      <Users className="h-6 w-6 text-primary" />
+                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-6 text-center hover:shadow-2xl transition-all">
+                    <div className="p-2.5 bg-primary/10 rounded-xl mb-3 inline-block">
+                      <Users className="h-5 w-5 text-primary" />
                     </div>
-                    <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary mb-2">20+</p>
-                    <p className="text-sm font-semibold text-muted-foreground">Tech Stack</p>
+                    <p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary mb-1">20+</p>
+                    <p className="text-xs font-semibold text-muted-foreground">Tech Stack</p>
                   </div>
                 </div>
               </div>
