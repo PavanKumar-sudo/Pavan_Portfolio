@@ -83,9 +83,47 @@ const About = () => {
 
             {/* Right Content */}
             <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              {/* Specialized In Card */}
+              <div className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-r from-accent/30 via-primary/20 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl border border-accent/30 rounded-3xl p-8 shadow-2xl hover:shadow-accent/20 transition-all">
+                  <h4 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <Award className="h-6 w-6 text-accent" />
+                    Specialized in:
+                  </h4>
+                  <p className="text-lg leading-relaxed text-foreground/90">
+                    <span className="font-bold text-primary">Java, Spring Boot, React & Cloud Engineering</span> with expertise in <span className="font-semibold text-accent">Microservices Architecture</span>, <span className="font-semibold text-accent">AWS/GCP</span>, and <span className="font-semibold text-accent">Kubernetes</span> deployments.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-6">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-2xl transition-all">
+                    <div className="p-3 bg-accent/10 rounded-xl mb-3 inline-block">
+                      <Rocket className="h-6 w-6 text-accent" />
+                    </div>
+                    <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-purple-400 to-accent mb-2">6+</p>
+                    <p className="text-sm font-semibold text-muted-foreground">Years Experience</p>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-2xl transition-all">
+                    <div className="p-3 bg-primary/10 rounded-xl mb-3 inline-block">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary mb-2">20+</p>
+                    <p className="text-sm font-semibold text-muted-foreground">Tech Stack</p>
+                  </div>
+                </div>
+              </div>
+
               {/* Education Card */}
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-accent/30 to-primary/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all">
                   <div className="flex items-start gap-4">
                     <div className="p-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl">
@@ -108,29 +146,11 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-xl transition-all">
-                    <p className="text-5xl font-black gradient-text mb-2">6+</p>
-                    <p className="text-sm font-medium text-muted-foreground">Years Experience</p>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl p-8 text-center hover:shadow-xl transition-all">
-                    <p className="text-5xl font-black gradient-text mb-2">20+</p>
-                    <p className="text-sm font-medium text-muted-foreground">Technologies</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Expertise Badge */}
-              <div className="relative">
-                <div className="absolute -inset-1 gradient-purple rounded-3xl blur-xl opacity-50"></div>
-                <div className="relative gradient-purple text-white rounded-3xl p-6 shadow-2xl">
-                  <p className="text-sm font-semibold uppercase tracking-wider mb-2">Core Expertise</p>
+              {/* Core Expertise Badge */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative bg-gradient-to-r from-primary via-accent to-primary text-white rounded-3xl p-6 shadow-2xl">
+                  <p className="text-sm font-semibold uppercase tracking-wider mb-2 opacity-90">Core Expertise</p>
                   <p className="text-lg font-bold leading-tight">
                     Microservices • Cloud-Native • Full Stack Development
                   </p>
