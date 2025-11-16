@@ -28,9 +28,9 @@ npm install
 Create a `.env` file in the project root:
 
 ```bash
-VITE_EMAILJS_SERVICE_ID=service_uoyyi3b        # your EmailJS service ID
-VITE_EMAILJS_TEMPLATE_ID=template_zo6maob      # your EmailJS template ID
-VITE_EMAILJS_PUBLIC_KEY=_423X52q1p1rpipVm      # your EmailJS public key
+VITE_EMAILJS_SERVICE_ID=        # your EmailJS service ID
+VITE_EMAILJS_TEMPLATE_ID=      # your EmailJS template ID
+VITE_EMAILJS_PUBLIC_KEY=      # your EmailJS public key
 ```
 
 Never commit real secrets; in this project the EmailJS **public** key is safe to expose on the client, but service/template IDs can be rotated per environment.
