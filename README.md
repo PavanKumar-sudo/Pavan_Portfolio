@@ -1,73 +1,117 @@
-# Welcome to your Lovable project
+## Pavan Builds Webs – Portfolio
 
-## Project info
+Modern, responsive developer portfolio built with **React + TypeScript + Vite + Tailwind + shadcn/ui**.  
+It showcases services, projects, skills, and a contact form that sends messages directly to your email via **EmailJS**.
 
-**URL**: https://lovable.dev/projects/2de086a2-36da-4232-8d02-fe9ab156f33b
+---
 
-## How can I edit this code?
+### Tech Stack
 
-There are several ways of editing your application.
+- **Framework**: React + TypeScript (Vite)
+- **Styling**: Tailwind CSS, custom utility classes (glassmorphism, gradients, animations)
+- **UI Library**: shadcn/ui + Lucide icons
+- **Forms / Email**: EmailJS (client-side email sending)
+- **Notifications**: Sonner (toasts)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2de086a2-36da-4232-8d02-fe9ab156f33b) and start prompting.
+### Getting Started (Local Development)
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Install dependencies**
 
-**Use your preferred IDE**
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Environment variables**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Create a `.env` file in the project root:
 
-Follow these steps:
+```bash
+VITE_EMAILJS_SERVICE_ID=service_uoyyi3b        # your EmailJS service ID
+VITE_EMAILJS_TEMPLATE_ID=template_zo6maob      # your EmailJS template ID
+VITE_EMAILJS_PUBLIC_KEY=_423X52q1p1rpipVm      # your EmailJS public key
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Never commit real secrets; in this project the EmailJS **public** key is safe to expose on the client, but service/template IDs can be rotated per environment.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Run the dev server**
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at the Vite dev URL (usually `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### Project Structure (High Level)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `src/components/Home.tsx` – Hero section, intro, social links, CTA buttons.
+- `src/components/Services.tsx` – Service cards and modern “Skill Coverage Overview” block.
+- `src/components/ServiceCard.tsx` – Reusable card with glassmorphism and skill bar.
+- `src/components/Projects.tsx` – Animated project cards and CTA.
+- `src/components/Contact.tsx` – Contact info and EmailJS-powered contact form.
+- `src/components/ui/` – shadcn/ui components + `sonner` toast styling.
+- `src/config/links.ts` – Centralized external URLs (GitHub, LinkedIn, live demo links).
+- `src/config/projects.ts` – Project metadata (titles, descriptions, tech stack, gradients).
 
-## What technologies are used for this project?
+To change links or projects, edit **only** `links.ts` and `projects.ts` – components will pick up the changes automatically.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### EmailJS Integration (Contact Form)
 
-## How can I deploy this project?
+The contact form in `Contact.tsx` sends submissions using EmailJS:
 
-Simply open [Lovable](https://lovable.dev/projects/2de086a2-36da-4232-8d02-fe9ab156f33b) and click on Share -> Publish.
+- Reads configuration from env vars:
+  - `VITE_EMAILJS_SERVICE_ID`
+  - `VITE_EMAILJS_TEMPLATE_ID`
+  - `VITE_EMAILJS_PUBLIC_KEY`
+- Sends `name`, `email`, and `message` fields to your configured Gmail.
+- Shows modern success/error toasts using Sonner.
 
-## Can I connect a custom domain to my Lovable project?
+> Make sure your EmailJS template expects `from_name`, `reply_to`, and `message` (or adjust the `templateParams` in `Contact.tsx`).
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Deploying to Vercel
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. **Create a Vercel project**
+   - Go to `https://vercel.com`, import this GitHub repo.
+
+2. **Set environment variables in Vercel**
+   - In *Project Settings → Environment Variables*, add:
+     - `VITE_EMAILJS_SERVICE_ID`
+     - `VITE_EMAILJS_TEMPLATE_ID`
+     - `VITE_EMAILJS_PUBLIC_KEY`
+   - Use the same values as your local `.env` (or environment-specific values).
+
+3. **Build settings**
+   - Framework preset: **Vite**
+   - Build command: `npm run build`
+   - Output directory: `dist`
+
+4. **Deploy**
+   - Trigger a deploy from Vercel; it will run `npm install` and `npm run build` and host the static output.
+
+5. **Custom domain (optional)**
+   - In Vercel project settings, add your custom domain and point DNS to Vercel as instructed.
+
+---
+
+### Scripts
+
+```bash
+npm run dev     # start dev server
+npm run build   # production build
+npm run preview # preview local production build
+lint            # (if configured in package.json) run linters
+```
+
+---
+
+### Notes
+
+- This is a **frontend-only** portfolio; no backend or database is included in this repo.
+- Be careful not to store real secrets (API keys, database URLs) in the client; use a proper backend if you add private integrations later.
